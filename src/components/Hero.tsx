@@ -12,8 +12,10 @@ export const Hero = () => {
   return (
     <section
       id="top"
-      className="relative h-screen flex items-center px-6 overflow-hidden"
+      // Changed h-screen to min-h-screen and added padding for fixed navs
+      className="relative min-h-screen flex items-center px-6 py-20 overflow-hidden bg-[#F8F9FA] mt-20"
     >
+      {/* Background Layer */}
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2070"
@@ -21,42 +23,48 @@ export const Hero = () => {
           className="w-full h-full object-cover opacity-20 grayscale"
           onError={handleImgError}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#F8F9FA] via-[#F8F9FA]/80 to-transparent"></div>
+        {/* Adjusted gradient for better mobile readability */}
+        <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-[#F8F9FA] via-[#F8F9FA]/95 md:via-[#F8F9FA]/80 to-transparent"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto w-full relative z-10 ">
-        <div className="max-w-3xl">
-          <h1 className="text-6xl md:text-8xl font-light tracking-tight leading-[1.1] mb-8">
-            Architects of <br />
-            <span className="font-semibold">Human Systems.</span>
+      <div className="max-w-7xl mx-auto w-full relative z-10">
+        <div className="max-w-4xl">
+          {/* Responsive Heading: text-4xl on tiny screens, 6xl on mobile, 8xl on desktop */}
+          <h1 className="text-6xl md:text-9xl font-light tracking-tighter mb-12 leading-none text-[#0A1128]">
+            Architects of <br className="hidden sm:block" />
+            <span className="text-[#C5A059]">Human Systems</span>
           </h1>
-          <p className="text-xl md:text-2xl text-slate-600 font-light leading-relaxed mb-12">
+
+          {/* Responsive Paragraph */}
+          <p className="text-lg md:text-2xl text-slate-600 font-light leading-relaxed mb-8 md:mb-12 max-w-2xl">
             Human Systems Group designs human infrastructures combining
             organizational engineering, digital systems, and ecosystem
             platforms.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6 mb-16">
-            <div className="flex items-center gap-3 text-sm tracking-widest uppercase font-semibold text-slate-400">
-              <span className="w-8 h-[1px] bg-slate-300"></span>
+          {/* Responsive Status Tags */}
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4 md:gap-8 mb-10 md:mb-16">
+            <div className="flex items-center gap-3 text-[10px] md:text-xs tracking-[0.2em] uppercase font-bold text-slate-400">
+              <span className="w-6 md:w-8 h-[1px] bg-slate-300"></span>
               Not a consulting firm
             </div>
-            <div className="flex items-center gap-3 text-sm tracking-widest uppercase font-semibold text-slate-400">
-              <span className="w-8 h-[1px] bg-slate-300"></span>
+            <div className="flex items-center gap-3 text-[10px] md:text-xs tracking-[0.2em] uppercase font-bold text-slate-400">
+              <span className="w-6 md:w-8 h-[1px] bg-slate-300"></span>
               Not a software vendor
             </div>
-            <div className="flex items-center gap-3 text-sm tracking-widest uppercase font-semibold text-[#C5A059]">
-              <span className="w-8 h-[1px] bg-[#C5A059]"></span>
+            <div className="flex items-center gap-3 text-[10px] md:text-xs tracking-[0.2em] uppercase font-bold text-[#C5A059]">
+              <span className="w-6 md:w-8 h-[1px] bg-[#C5A059]"></span>
               An architecture
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-4">
+          {/* Responsive Buttons: Full width on mobile, auto on desktop */}
+          <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="#approach"
-              className="bg-[#0A1128] text-white px-8 py-4 flex items-center gap-4 hover:bg-black transition-colors group"
+              className="bg-[#0A1128] text-white px-8 py-5 flex items-center justify-center sm:justify-start gap-4 hover:bg-black transition-all group"
             >
-              <span className="uppercase text-xs tracking-widest font-bold">
+              <span className="uppercase text-[10px] md:text-xs tracking-[0.2em] font-bold">
                 Explore the approach
               </span>
               <ArrowRight
@@ -66,9 +74,9 @@ export const Hero = () => {
             </a>
             <a
               href="#brands"
-              className="border border-[#0A1128] text-[#0A1128] px-8 py-4 flex items-center gap-4 hover:bg-[#0A1128] hover:text-white transition-all group"
+              className="border border-[#0A1128] text-[#0A1128] px-8 py-5 flex items-center justify-center sm:justify-start gap-4 hover:bg-[#0A1128] hover:text-white transition-all group"
             >
-              <span className="uppercase text-xs tracking-widest font-bold">
+              <span className="uppercase text-[10px] md:text-xs tracking-[0.2em] font-bold">
                 View the brands
               </span>
             </a>

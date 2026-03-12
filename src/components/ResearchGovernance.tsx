@@ -70,7 +70,7 @@ export const ResearchGovernance = () => {
                 steering capacity without unnecessary complexity.
               </p>
 
-              <div className="pt-8 border-l-2 border-[#C5A059] pl-8 mt-auto">
+              <div className=" border-l-2 border-[#C5A059] pl-8 mt-auto">
                 <h5 className="text-[10px] uppercase tracking-widest font-black mb-3 text-[#0A1128]">
                   Long-term Orientation
                 </h5>

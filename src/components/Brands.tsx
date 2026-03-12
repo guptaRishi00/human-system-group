@@ -14,9 +14,9 @@ export const Brands = () => {
       id="brands"
       className="py-24 md:py-40 bg-white text-[#0A1128] px-6 relative overflow-hidden"
     >
-      <div className="absolute top-0 right-0 w-full h-full opacity-30 pointer-events-none">
+      <div className="absolute top-0 right-0 w-full h-full opacity-70 pointer-events-none">
         <img
-          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2072"
+          src="https://images.unsplash.com/photo-1609408197217-65fe7a1e6e7c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDExOXx8fGVufDB8fHx8fA%3D%3D"
           alt="Technical pattern"
           className="w-full h-full object-cover mix-blend-luminosity"
           onError={handleImgError}
@@ -26,7 +26,7 @@ export const Brands = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div className="max-w-2xl">
-            <h4 className="text-[#C5A059] uppercase tracking-[0.3em] text-[10px] font-bold mb-6">
+            <h4 className="text-[#0A1128] uppercase tracking-[0.3em] text-[10px] font-bold mb-6">
               Operating Ecosystem
             </h4>
             <h2 className="text-4xl md:text-5xl font-light">

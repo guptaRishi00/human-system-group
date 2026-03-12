@@ -33,24 +33,34 @@ export default function ManifestoPage() {
 
   return (
     <main className="min-h-screen bg-white">
-      {/* 1. Expansive Header */}
-      <section className="px-6 pt-40 pb-32 bg-[#F8F9FA] relative overflow-hidden">
-        <div className="max-w-5xl mx-auto text-center relative z-10">
+      {/* Header: Immersive & Dark (Synced with Brands Page) */}
+      <section className="px-6 pt-48 pb-32 bg-[#0A1128] text-white relative overflow-hidden">
+        {/* Technical Pattern Overlay */}
+        <div className="absolute inset-0 opacity-10">
+          <img
+            src="https://images.unsplash.com/photo-1664575602276-acd073f104c1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNvcnBvcmF0ZXxlbnwwfHwwfHx8MA%3D%3D"
+            alt="Technical pattern"
+            className="w-full h-full object-cover"
+            onError={handleImgError}
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
           <span className="text-[#C5A059] uppercase tracking-[0.5em] text-[10px] font-bold mb-8 block">
             Core Beliefs
           </span>
-          <h1 className="text-6xl md:text-9xl font-light tracking-normal text-[#0A1128] mb-12 leading-none">
-            Our <span className="font-serif">Philosophy</span>
+          <h1 className="text-6xl md:text-9xl font-light tracking-tighter mb-12 leading-none">
+            Our <span className="text-[#C5A059]">Philosophy</span>
           </h1>
-          <p className="text-xl md:text-2xl text-slate-500 font-light leading-relaxed max-w-3xl mx-auto">
+          <p className="max-w-2xl text-2xl text-slate-400 font-light leading-relaxed">
             The fundamental principles that dictate how we engineer, structure,
             and scale human systems.
           </p>
         </div>
       </section>
 
-      {/* 2. Philosophy Card Grid */}
-      <section className="py-40 px-6">
+      {/* Philosophy Card Grid */}
+      <section className="py-40 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {pillars.map((pillar, i) => (
@@ -58,7 +68,6 @@ export default function ManifestoPage() {
                 key={i}
                 className="group relative bg-white border border-slate-100 p-12 md:p-16 transition-all duration-500 hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.05)] hover:-translate-y-2 flex flex-col"
               >
-                {/* Visual Accent */}
                 <div className="absolute top-0 left-0 w-full h-1 bg-slate-50 group-hover:bg-[#C5A059] transition-colors duration-500"></div>
 
                 <div className="text-4xl font-serif italic text-slate-200 group-hover:text-[#C5A059] transition-colors duration-500 mb-12">
@@ -93,9 +102,8 @@ export default function ManifestoPage() {
         </div>
       </section>
 
-      {/* 3. Refined Action Block */}
+      {/* Refined Action Block */}
       <section className="bg-[#0A1128] py-40 text-center px-6 relative overflow-hidden">
-        {/* Subtle Background Pattern */}
         <div className="absolute inset-0 opacity-10 grayscale pointer-events-none">
           <img
             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2070"
@@ -126,7 +134,6 @@ export default function ManifestoPage() {
         </div>
       </section>
 
-      {/* 4. Secondary Component Integration */}
       <div className="bg-white">
         <ManifestoSection />
       </div>

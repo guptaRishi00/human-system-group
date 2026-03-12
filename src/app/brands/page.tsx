@@ -16,7 +16,7 @@ export default function BrandsPage() {
       <section className="px-6 pt-48 pb-32 bg-[#0A1128] text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <img
-            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2072"
+            src="https://images.unsplash.com/photo-1462556791646-c201b8241a94?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNvcnBvcmF0ZXxlbnwwfHwwfHx8MA%3D%3D"
             alt="Technical pattern"
             className="w-full h-full object-cover"
             onError={handleImgError}
