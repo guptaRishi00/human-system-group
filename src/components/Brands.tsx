@@ -9,6 +9,40 @@ export const Brands = () => {
       "https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&q=80&w=1200";
   };
 
+  // 1. Added href to the brand objects
+  const brands = [
+    {
+      name: "Socle RH",
+      tag: "Org Architecture",
+      desc: "Structuring, governance, trajectories, and skill development—driven by clarity and results.",
+      href: "https://soclerh.fr",
+    },
+    {
+      name: "Human System Hub (H)",
+      tag: "Infrastructure",
+      desc: "An orchestration layer to structure, synchronize, and provide visibility. Governance infrastructure, not an HR tool.",
+      href: "https://soclerh.fr",
+    },
+    {
+      name: "Kora",
+      tag: "Ecosystems",
+      desc: "B2B matching infrastructure. A quality-oriented platform for structuring access to partners and opportunities.",
+      href: "https://korab2b.com/",
+    },
+    {
+      name: "Capahome",
+      tag: "Human Services",
+      desc: "Territorial licensing, standardization of methods, tools, and processes. A network logic operated as infrastructure.",
+      href: "https://capahome.fr/",
+    },
+    {
+      name: "Capabilis",
+      tag: "Employability",
+      desc: "Public-private interface: trajectories, skills, inclusion, and social performance platform.",
+      href: " https://capabilis.fr/",
+    },
+  ];
+
   return (
     <section
       id="brands"
@@ -37,33 +71,7 @@ export const Brands = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-slate-200 border border-slate-200">
-          {[
-            {
-              name: "Socle RH",
-              tag: "Org Architecture",
-              desc: "Structuring, governance, trajectories, and skill development—driven by clarity and results.",
-            },
-            {
-              name: "Human System Hub (H)",
-              tag: "Infrastructure",
-              desc: "An orchestration layer to structure, synchronize, and provide visibility. Governance infrastructure, not an HR tool.",
-            },
-            {
-              name: "Kora",
-              tag: "Ecosystems",
-              desc: "B2B matching infrastructure. A quality-oriented platform for structuring access to partners and opportunities.",
-            },
-            {
-              name: "Capahome",
-              tag: "Human Services",
-              desc: "Territorial licensing, standardization of methods, tools, and processes. A network logic operated as infrastructure.",
-            },
-            {
-              name: "Capabilis",
-              tag: "Employability",
-              desc: "Public-private interface: trajectories, skills, inclusion, and social performance platform.",
-            },
-          ].map((brand, i) => (
+          {brands.map((brand, i) => (
             <div
               key={i}
               className="bg-slate-50 p-10 flex flex-col justify-between group hover:bg-white hover:shadow-xl transition-all"
@@ -81,13 +89,24 @@ export const Brands = () => {
                   {brand.desc}
                 </p>
               </div>
-              {/* <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest group-hover:text-[#C5A059] transition-colors cursor-pointer">
-                                <span>Explore Brand</span>
-                                <ChevronRight size={14} />
-                            </div> */}
+
+              {/* 2. Wrapped the footer in an anchor tag */}
+              <a
+                href={brand.href}
+                target="_blank" // Opens in new tab
+                rel="noopener noreferrer" // Security best practice
+                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest group-hover:text-[#C5A059] transition-colors cursor-pointer"
+              >
+                <span>Explore Brand</span>
+                <ChevronRight
+                  size={14}
+                  className="group-hover:translate-x-1 transition-transform"
+                />
+              </a>
             </div>
           ))}
-          <div className="bg-slate-50 p-10 flex items-center justify-center border-l border-slate-200 opacity-60 font-medium text-slate-600 text-sm">
+
+          <div className="bg-slate-50 p-10 flex items-center justify-center border-l border-slate-200 opacity-60 font-medium text-slate-600 text-sm italic">
             Additional infrastructure layers under development...
           </div>
         </div>

@@ -122,10 +122,10 @@ export const Approach = () => {
                       className="flex items-center justify-between text-[11px] text-slate-500 uppercase tracking-[0.15em] font-semibold group-hover:text-[#0A1128] transition-colors duration-300"
                     >
                       <span>{item}</span>
-                      <ArrowUpRight
+                      {/* <ArrowUpRight
                         size={12}
                         className="opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 text-[#C5A059]"
-                      />
+                      /> */}
                     </li>
                   ))}
                 </ul>
