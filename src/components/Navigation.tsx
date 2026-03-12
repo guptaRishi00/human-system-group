@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { usePathname } from "next/navigation"; // Import this to detect active page
+import { usePathname } from "next/navigation";
 
 export const navLinks = [
   { name: "Approach", href: "/approach" },
@@ -14,13 +14,22 @@ export const navLinks = [
 export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const pathname = usePathname(); // Get current URL path
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Prevent scrolling when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isMenuOpen]);
 
   return (
     <>
@@ -94,6 +103,19 @@ export const Navigation = () => {
           >
             <X size={32} />
           </button>
+
+          {/* Home Link (Mobile Only) */}
+          <a
+            href="/"
+            onClick={() => setIsMenuOpen(false)}
+            className={`text-2xl font-light tracking-widest uppercase transition-colors ${
+              pathname === "/"
+                ? "text-[#C5A059]"
+                : "text-white/90 hover:text-[#C5A059]"
+            }`}
+          >
+            Home
+          </a>
 
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
